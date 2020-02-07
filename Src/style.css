@@ -1,0 +1,72 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+.formgrid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+label {
+	grid-column: 1;
+}
+
+
+input, textarea {
+	grid-column: 2;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 2fr 2fr 1fr;
+	grid-gap: 20px;
+	grid-template-areas: 
+	"header header header"
+	"main mainheader footer"
+	"main aside footer"
+}
+
+.grid div:nth-child(even) {
+ background-color: red;
+} 
+
+.grid div:nth-child(odd) {
+ background-color: green;
+}
+
+.header {
+grid-area: header
+}
+
+.main {
+grid-area: main
+}
+
+.mainheader {
+grid-area: mainheader
+}
+
+.aside {
+grid-area: aside
+}
+
+.footer {
+grid-area: footer
+}
+
+@media screen and (min-width: 736px)
+{
+.grid {
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	grid-template-rows: 2fr 1fr 1fr;
+	grid-gap: 10px;
+	grid-template-areas: 
+	"header ."
+	"header main"
+	"main aside"
+	"footer footer"
+}
+}
+
